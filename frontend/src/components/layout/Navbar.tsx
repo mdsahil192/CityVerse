@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Search, MapPin, User, Calendar, LogOut, Home, Navigation, Sun, Moon, Hexagon, Heart } from "lucide-react"
+import { Search, MapPin, User, Calendar, LogOut, Home, Navigation, Sun, Moon, Hexagon, Heart, History } from "lucide-react"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
@@ -88,6 +88,10 @@ export default function Navbar() {
             <Link to="/explore" className={`flex items-center gap-2 transition-colors ${location.pathname === '/explore' ? 'text-cyan-400 font-semibold' : 'text-blue-100/80 hover:text-white'}`}>
               <Home className="h-4 w-4" />
               Explore
+            </Link>
+            <Link to="/forgotten-places" className={`flex items-center gap-2 transition-colors ${location.pathname === '/forgotten-places' ? 'text-cyan-400 font-semibold' : 'text-blue-100/80 hover:text-white'}`}>
+              <History className="h-4 w-4" />
+              Forgotten
             </Link>
             <Link to="/neighborhoods" className={`flex items-center gap-2 transition-colors ${location.pathname === '/neighborhoods' ? 'text-cyan-400 font-semibold' : 'text-blue-100/80 hover:text-white'}`}>
               <MapPin className="h-4 w-4" />

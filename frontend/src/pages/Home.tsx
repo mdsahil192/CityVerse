@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { 
-  ArrowRight, MapPin, Utensils, Calendar, Navigation, 
+  ArrowRight, MapPin, Utensils, Calendar, 
   Sparkles, Flame, Mountain, Droplets, Moon, 
-  Landmark, TreePine, Heart, Bot, CloudSun
+  Landmark, TreePine, Heart, Bot
 } from "lucide-react"
 import { Button } from "../components/ui/button"
 import AnimatedStars from "../components/ui/AnimatedStars"
@@ -259,6 +259,58 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
+
+        {/* Forgotten Places Hero Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="w-full mt-24 mb-12 relative container mx-auto px-6"
+        >
+          <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer">
+            {/* Background Image - Past */}
+            <div className="absolute inset-0">
+              <img 
+                src="https://images.unsplash.com/photo-1506544777-626a58b299e9?auto=format&fit=crop&q=80&w=2400&sat=-100" 
+                alt="Historical City" 
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-opacity duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06102B] via-[#06102B]/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-orange-900/10 mix-blend-color"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 gap-8">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-orange-400">Time Travel Experience</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Every city has places it forgot.
+                </h2>
+                <p className="text-blue-100/70 text-lg mb-8 font-medium">
+                  Explore what once stood here. Discover demolished buildings, lost markets, and abandoned monuments.
+                </p>
+                
+                <Button className="rounded-full h-12 px-8 text-sm font-semibold shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] transition-all bg-gradient-to-r from-orange-500 to-amber-500 text-white border-0" asChild>
+                  <Link to="/forgotten-places">
+                    Start Journey: TODAY → PAST
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Decorative elements */}
+              <div className="hidden md:flex flex-col gap-4 text-orange-200/50 font-mono text-xs text-right opacity-60">
+                <p>LAT: 28.6139° N</p>
+                <p>LNG: 77.2090° E</p>
+                <p>ERA: 1920-2026</p>
+                <p>RECORDS: 124,592</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Bottom Curved Glass Section */}
         <motion.div 

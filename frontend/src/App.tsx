@@ -12,6 +12,7 @@ import Saved from "./pages/Saved"
 import Neighborhoods from "./pages/Neighborhoods"
 import RoutePlanner from "./pages/RoutePlanner"
 import Events from "./pages/Events"
+import ForgottenPlaces from "./pages/ForgottenPlaces"
 
 const queryClient = new QueryClient()
 
@@ -30,6 +31,7 @@ function AnimatedRoutes() {
           <Route path="neighborhoods" element={<PageTransition><Neighborhoods /></PageTransition>} />
           <Route path="routes" element={<PageTransition><RoutePlanner /></PageTransition>} />
           <Route path="events" element={<PageTransition><Events /></PageTransition>} />
+          <Route path="forgotten-places" element={<PageTransition><ForgottenPlaces /></PageTransition>} />
           <Route path="place/:id" element={<PageTransition><PlaceDetails /></PageTransition>} />
           
           <Route element={<ProtectedRoute />}>
